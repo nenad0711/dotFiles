@@ -1,0 +1,29 @@
+[push]
+	default = simple
+[alias]
+	s = status 
+	lg = "log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset'"
+	cge = config --global --edit
+	ae = add :/ --all
+	au = add -u
+	ce = checkout :/
+	a = add
+	c = checkout
+	cm = commit -m
+	p = push
+	pl = pull
+	ignored = "ls-files -oi --exclude-standard"
+	rc = rebase --continue
+[pull]
+	rebase = true
+[credential]
+
+[core]
+	longpaths = true
+	autocrlf = true
+[credential]
+	helper = wincred
+[pack]
+	thread = 8
+[color]
+	ui = auto
