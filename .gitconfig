@@ -27,3 +27,5 @@
 	thread = 8
 [color]
 	ui = auto
+[diff]
+	algorithm = "histogram"
