@@ -1,31 +1,56 @@
 [push]
-	default = simple
+	default = current
 [alias]
 	s = status 
 	lg = "log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset'"
 	cge = config --global --edit
 	ae = add :/ --all
 	au = add -u
-	ce = checkout :/
+	ca= checkout :/
 	a = add
 	c = checkout
-	cm = commit -m
+	cm = checkout master
 	p = push
 	pl = pull
 	ignored = "ls-files -oi --exclude-standard"
 	rc = rebase --continue
+	rank = shortlog -sn --no-merges
+	b = branch
+	d = diff
+	sw = switch
 [pull]
 	rebase = true
+	default = current
 [credential]
 
 [core]
 	longpaths = true
-	autocrlf = true
+	autocrlf = input
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [credential]
 	helper = wincred
 [pack]
 	thread = 8
 [color]
-	ui = auto
+	ui = true
 [diff]
 	algorithm = "histogram"
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[gui]
+	recentrepo = C:/Projects/BrooklawEdu
+[user]
+	name = Adam Hess
+	email = adam.hess@brooklaw.edu
+[winUpdater]
+	recentlySeenVersion = 2.25.0.windows.1
