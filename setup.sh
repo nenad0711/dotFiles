@@ -4,7 +4,7 @@ nvm install --lts && \
   nvm use --lts && \
   npm install -g diff-so-fancy git-jump
 git config alias.sw -e jump
-sudo apt-get update  && sudo apt-get install vim
+sudo apt-get update  && sudo apt-get install -y vim
 
 code --install-extension github.copilot --force
 code --install-extension oderwat.indent-rainbow --force
