@@ -18,6 +18,7 @@
 	b = branch
 	d = diff
 	sw = switch
+	jp = jump
 [pull]
 	rebase = true
 	default = current
