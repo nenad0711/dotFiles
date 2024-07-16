@@ -19,6 +19,7 @@
 	d = diff
 	sw = switch
 	jp = jump
+	mine =! "git branch -a | grep adamhess/"
 [pull]
 	rebase = true
 	default = current
