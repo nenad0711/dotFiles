@@ -6,5 +6,5 @@ nvm install --lts && \
 git config alias.sw -e jump 
 sudo apt-get update  && sudo apt-get install -y vim & 
 cp . ~/ -r
-
+chmod 755 ~/*.sh
 
