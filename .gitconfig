@@ -1,25 +1,5 @@
 [push]
 	default = current
-[alias]
-	s = status 
-	lg = "log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset'"
-	cge = config --global --edit
-	ae = add :/ --all
-	au = add -u
-	ca= checkout :/
-	a = add
-	c = checkout
-	cm = checkout master
-	p = push
-	pl = pull
-	ignored = "ls-files -oi --exclude-standard"
-	rc = rebase --continue
-	rank = shortlog -sn --no-merges
-	b = branch
-	d = diff
-	sw = switch
-	jp = jump
-	mine =! "git branch -a | grep adamhess/"
 [pull]
 	rebase = true
 	default = current
