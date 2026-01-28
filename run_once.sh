@@ -4,5 +4,6 @@ code --install-extension hbenl.vscode-test-explorer --force
 code --install-extension samuelcolvin.jinjahtml --force
 code --install-extension leighlondon.eml --force
 code --install-extension joel-harkes.emlviewer --force
+alias tg="terragrunt"
 
 
