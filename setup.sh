@@ -12,3 +12,12 @@ nvm install --lts && \
 sudo apt-get update  && sudo apt-get install -y vim
 
 
+---
+
+### Add to `setup.sh` in your dotfiles:
+
+```bash
+# Install Azure CLI
+if ! command -v az &> /dev/null; then
+  curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+fi
