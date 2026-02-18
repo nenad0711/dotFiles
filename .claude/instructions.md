@@ -118,3 +118,25 @@ When I say "dlqs" or "check dlqs", check these prod queues for messages:
 - `prod-matter-case_progress-*``
 - `prod-court_reporting-api-*`
 - `prod-referral_sync-api-*`
+
+### Azure Service Bus Prod DLQs
+- Resource Group: mm-nrr
+- Namespace: lawfirm-premium
+- Queues:
+  - mm-nrr-messages-prod
+  - mm-nrr-find-prod
+  - mm-nrr-receive-prod
+  - mm-nrr-send-prod
+  - mm-nrr-validation-prod
+
+### Azure DLQ Check Command
+```bash
+for q in mm-nrr-messages-prod mm-nrr-find-prod mm-nrr-receive-prod mm-nrr-send-prod mm-nrr-validation-prod; do
+  count=$(az servicebus queue show --resource-group mm-nrr --namespace-name lawfirm-premium --name "$q" --query "countDetails.deadLetterMessageCount" --output tsv 2>/dev/null)
+  printf "%-30s %s\n" "$q" "${count:-error}"
+done
+
+### Related Lambda Functions
+- `prod-matter-case_progress-*``
+- `prod-court_reporting-api-*`
+- `prod-referral_sync-api-*`
