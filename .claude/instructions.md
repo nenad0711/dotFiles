@@ -87,3 +87,34 @@ When I say:
 - Summarize large outputs instead of dumping raw JSON
 - Suggest follow-up commands when relevant
 - Default to dev environment unless I specify otherwise
+
+## My Services & DLQs (Prod Only)
+
+### Services I Own
+- **case_progress** - Case progress tracking
+- **court_reporting** - Court reporting API
+- **referral_sync** - Referral synchronization
+
+### DLQ Quick Check
+
+When I say "dlqs" or "check dlqs", check these prod queues for messages:
+
+| DLQ | Queue Name |
+|-----|------------|
+| case_progress bulk | prod-matter-case_progress-bulk-dlq |
+| case_progress insurance | prod-matter-case_progress-case_insurance-dlq |
+| case_progress matter | prod-matter-case_progress-case_matter-dlq |
+| case_progress negotiation | prod-matter-case_progress-case_negotiation-dlq |
+| case_progress opening | prod-matter-case_progress-case_opening-dlq |
+| case_progress activity | prod-matter-case_progress-matter_activity_tracking-dlq |
+| case_progress settlement | prod-matter-case_progress-settlement-dlq |
+| court_reporting download | prod-court_reporting-api-download-dlq |
+| court_reporting receive | prod-court_reporting-api-receive-dlq |
+| court_reporting submit | prod-court_reporting-api-submit-dlq |
+| referral_sync receive | prod-referral_sync-api-receive-dlq |
+| referral_sync submit | prod-referral_sync-api-submit-dlq |
+
+### Related Lambda Functions
+- `prod-matter-case_progress-*``
+- `prod-court_reporting-api-*`
+- `prod-referral_sync-api-*`
